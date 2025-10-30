@@ -1,0 +1,36 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"heading": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading1",
+						"content": {
+							"text": "Energy"
+						}
+					}
+				]
+			},
+			"body": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Laboris ex ut elit aute enim. Labore magna labore ex occaecat aliqua elit. Reprehenderit velit culpa tempor voluptate ad anim aliquip Lorem ea ea incididunt aute eiusmod est."
+						}
+					}
+				]
+			},
+			"buy_button_text": {
+				"__TYPE__": "FieldContent",
+				"value": "girl",
+				"type": "Text"
+			}
+		},
+		"items": []
+	}
+]

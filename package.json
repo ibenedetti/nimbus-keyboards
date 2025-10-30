@@ -6,17 +6,31 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "slicemachine": "start-slicemachine"
   },
   "dependencies": {
+    "@prismicio/client": "^7.20.3",
+    "@prismicio/next": "^2.0.2",
+    "@prismicio/react": "^3.2.2",
+    "@react-three/drei": "^10.7.6",
+    "@react-three/fiber": "^9.4.0",
+    "@types/three": "^0.180.0",
+    "clsx": "^2.1.1",
+    "leva": "^0.10.0",
+    "next": "16.0.0",
     "react": "19.2.0",
     "react-dom": "19.2.0",
-    "next": "16.0.0"
+    "three": "^0.180.0"
   },
   "devDependencies": {
+    "@slicemachine/adapter-next": "^0.3.85",
     "@tailwindcss/postcss": "^4",
-    "tailwindcss": "^4",
     "eslint": "^9",
-    "eslint-config-next": "16.0.0"
+    "eslint-config-next": "16.0.0",
+    "prettier": "^3.6.2",
+    "prettier-plugin-tailwindcss": "^0.7.1",
+    "slice-machine-ui": "^2.19.0",
+    "tailwindcss": "^4"
   }
 }
