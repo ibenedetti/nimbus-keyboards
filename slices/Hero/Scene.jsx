@@ -5,14 +5,14 @@ import { Environment, PerspectiveCamera } from "@react-three/drei"
 import { useControls } from "leva"
 import { Keycap } from "@/components/keycap"
 export default function Scene () {
-    const {positionX, positionY, positionZ, rotationX, rotationY, rotationZ} = useControls(
+    /*const {positionX, positionY, positionZ, rotationX, rotationY, rotationZ} = useControls(
         {positionX:0,
         positionY:0, 
         positionZ:2,
         rotationX:Math.PI / 2,
         rotationY:0,
         rotationZ:0, 
-    })
+    })*/
 
 
 
