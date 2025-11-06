@@ -4,7 +4,7 @@ import { useGLTF } from "@react-three/drei";
 import { Float, useTexture } from "@react-three/drei";
 import { useMemo } from "react";
 
-export const Keyboard = forwardRef(({ ...props }, ref) => {
+export const Keyboard = forwardRef(({ keycapMaterial, knobColor, ...props }, ref) => {
   const { nodes, materials } = useGLTF("/keyboard.gltf");
 
   // Main structure refs
@@ -177,7 +177,7 @@ export const Keyboard = forwardRef(({ ...props }, ref) => {
 
 
   const knobMat = new THREE.MeshStandardMaterial({
-    color: "#e24818",
+    color: knobColor || "#e24818",
     roughness: 0.4,
     metalness: 1,
     bumpMap: knurlTexture,
@@ -209,10 +209,12 @@ export const Keyboard = forwardRef(({ ...props }, ref) => {
     map: screenTexture
   });
 
-  const keycapMat = new THREE.MeshStandardMaterial({
+  const defaultKeycapMat = new THREE.MeshStandardMaterial({
     roughness: 0.7,
     map: keycapTexture,
   });
+
+const keycapMat = keycapMaterial || defaultKeycapMat;
 
   const switchMat = new THREE.MeshStandardMaterial({
     color: "#cccccc",
