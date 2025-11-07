@@ -55,6 +55,7 @@ const ColorChanger = ({ slice }) => {
 
   function hadleTextureSelect (texture) {
     if (texture.id == selectedTextureId || isAnimating) return;
+    setIsAnimating(true);
     setSelectedTextureId(texture.id);
     setBackgroundText(Array.from({length:10}, ()=> KEYCAP_TEXTURES.find((t) => t.id === texture.id).name || "").join(" "));
   }
@@ -112,6 +113,7 @@ const ColorChanger = ({ slice }) => {
             <li key={texture.id}>
               <button 
               onClick={() => hadleTextureSelect(texture)}
+              disabled={isAnimating}
               className={clsx("flex aspect-square flex-col items-center justify-center rounded-lg border-2 p-4 hover:scale-105 motion-safe transition-all motion-safe:duration-300",
                 selectedTextureId == texture.id ? "border-[#81bfed] bg-[#81bfed]/20" : "cursor-pointer border-gray",
                 isAnimating && "cursor-not-allowed opacity-50"
