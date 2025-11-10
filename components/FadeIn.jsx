@@ -18,23 +18,30 @@ export function FadeIn({ children, className, targetChildren, ...vars }) {
 
         if(!target) return;
 
-        gsap.set(target, {
-            opacity: 0,
-            y: 60,
-        })
+        const mm = gsap.matchMedia();
 
-        gsap.to(target, {
-            duration: .8,
-            opacity: 1,
-            ease: "power3.out",
-            y: 0,
-            stagger: .2,
-            ...vars,
-            scrollTrigger: {
-                trigger: containerRef.current,
-                start: "top 50%",
-            }
-        })
+        mm.add("(prefers-reduced-motion: no-preference)", () => {
+
+
+            gsap.set(target, {
+                opacity: 0,
+                y: 60,
+            }),
+
+            gsap.to(target, {
+                duration: .8,
+                opacity: 1,
+                ease: "power3.out",
+                y: 0,
+                stagger: .2,
+                ...vars,
+                scrollTrigger: {
+                    trigger: containerRef.current,
+                    start: "top 50%",
+                }
+            })
+        
+        });
     })
 
     return (
