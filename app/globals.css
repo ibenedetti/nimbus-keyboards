@@ -40,3 +40,24 @@
 .blue-gradient-bg {
   background: linear-gradient(to bottom, #000000, #0f172a, #062f4a, #7fa0b9);
 }
+
+.snake-svg {
+  stroke-width: 3;
+  stroke-dasharray: 3500;
+  stroke-dashoffset: 3500;
+  animation: strokeanimation 2s ease-in-out 0s 1 forwards;
+}
+
+@keyframes strokeanimation {
+  0% {
+    stroke-dashoffset: 3500;
+    fill: transparent;
+  }
+  80% {
+    fill: transparent;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    fill: #ffffff;
+  }
+}

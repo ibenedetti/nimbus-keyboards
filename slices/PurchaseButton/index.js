@@ -8,6 +8,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useRef, useState } from "react";
 import { LuChevronRight, LuLoader } from "react-icons/lu";
+import { checkout } from "@/checkout";
 
 /**
  * @typedef {import("@prismicio/client").Content.PurchaseButtonSlice} PurchaseButtonSlice
@@ -20,10 +21,11 @@ const PurchaseButton = ({ slice }) => {
   const buttonRef = useRef(null);
   const textRef = useRef(null);
   const [isPressed, setIsPressed] = useState(false);
+  
 
   const handlePurchaseClick = async () => {
     setIsPressed(true);
-    //TODO: Add your purchase logic here
+    await checkout();
     await new Promise((resolve) => setTimeout(resolve, 2000));
     setIsPressed(false);
   };
@@ -77,7 +79,7 @@ const PurchaseButton = ({ slice }) => {
     >
       <FadeIn className="relative mx-auto max-w-7xl px-4 text-center" targetChildren>
         <p className="mb-6 text-xl font-medium text-gray-700 md:text-2xl">{slice.primary.eyebrow}</p>
-        <h2 className="font-bold-slanted mb-8 scroll-pt-6 text-5xl text-gray-900 uppercase md:text-7xl lg:text-8xl">
+        <h2 id="buy-button" className="font-bold-slanted mb-8 scroll-pt-6 text-5xl text-gray-900 uppercase md:text-7xl lg:text-8xl">
           <PrismicText field={slice.primary.heading} />
         </h2>
         <button

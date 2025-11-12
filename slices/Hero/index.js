@@ -13,8 +13,37 @@ import gsap from "gsap";
 import { SplitText } from "gsap/SplitText";
 import { useGSAP } from "@gsap/react";
 import ScrollTrigger from "gsap/ScrollTrigger";
+import { Loader } from "@/components/Loader";
+import { useProgress } from "@react-three/drei";
+import { useEffect, useState } from "react";
 
 gsap.registerPlugin(useGSAP, SplitText, ScrollTrigger);
+
+function LoaderWrapper () {
+  const {active} = useProgress();
+  const [showLoader, setShowLoader] = useState(active);
+
+  const MINIMUM_DISPLAY_TIME = 1500; 
+
+  useEffect(() => {
+    let timer;
+
+    if (active) {
+      setShowLoader(true);
+    } else {
+      timer = setTimeout(() => {
+        setShowLoader(false);
+      }, MINIMUM_DISPLAY_TIME);
+    }
+
+    return () => {
+      clearTimeout(timer);
+    };
+    
+  }, [active]);
+
+  return showLoader ? <Loader /> : null
+}
 
 const Hero = ({ slice }) => {
 
@@ -74,6 +103,7 @@ const Hero = ({ slice }) => {
           <Scene />
         </Canvas>
       </div>
+      <LoaderWrapper />
 
       <div className="hero-content absolute inset-x-0 top-0 h-dvh">
         <Bounded fullWidth className="absolute top-18 inset-x-0 md:top-24 md:left-[8dvw]">

@@ -14,6 +14,7 @@
     "@prismicio/client": "^7.20.3",
     "@prismicio/next": "^2.0.2",
     "@prismicio/react": "^3.2.2",
+    "@radix-ui/react-dialog": "^1.1.15",
     "@react-three/drei": "^10.7.6",
     "@react-three/fiber": "^9.4.0",
     "@types/three": "^0.180.0",
@@ -24,6 +25,7 @@
     "react": "19.2.0",
     "react-dom": "19.2.0",
     "react-icons": "^5.5.0",
+    "stripe": "^19.3.0",
     "three": "^0.180.0"
   },
   "devDependencies": {
