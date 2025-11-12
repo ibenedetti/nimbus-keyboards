@@ -4,7 +4,7 @@ import Bounded from "./Bounded";
 
 export function Footer() {
   return (
-    <Bounded as="footer" className="bg-black text-gray-400">
+    <Bounded as="footer" className="bg-[#002555] text-gray-400">
       <div className="flex flex-col items-center justify-between gap-8 md:flex-row">
         <div className="flex flex-col items-center md:items-start">
           <Link href="/" className="shrink-0">

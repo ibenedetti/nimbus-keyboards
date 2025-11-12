@@ -10,13 +10,13 @@ import { Fragment } from "react";
 const Marquee = ({ slice }) => {
 
   const MarqueeContent = () => (
-     <div className="flex items-center bg-gray-200 py-10 whitespace-nowrap">
+     <div className="flex items-center bg-black/80 py-10 whitespace-nowrap">
         
           {slice.primary.phrases.map((item, i) => (
             <Fragment key={i}>
 
               <div 
-              className="text-[180px] md:text-[260px] font-bold-slanted px-14 text-gray-400/80 leading-none uppercase [text-box:trim-both_cap_alphabetic]" 
+              className="text-[180px] md:text-[260px] font-bold-slanted px-14 text-red-400/80 leading-none uppercase [text-box:trim-both_cap_alphabetic]" 
               >             
                 
                 {item.text}

@@ -15,15 +15,15 @@ import {Scene} from "./Scene";
 export const KEYCAP_TEXTURES = [
   {
     id: "goodwell",
-    name: "Goodwell",
-    path: "/goodwell_uv.png",
+    name: "Baddwell",
+    path: "/badwell_uv.png",
     knobColor: "#E44E21",
   },
   {
     id: "dreamboard",
-    name: "Dreamboard",
-    path: "/dreamboard_uv.png",
-    knobColor: "#E9759F",
+    name: "Blackout",
+    path: "/blackout_uv.png",
+    knobColor: "#000000",
   },
   {
     id: "cherrynavy",
@@ -32,8 +32,8 @@ export const KEYCAP_TEXTURES = [
     knobColor: "#F06B7E",
   },
   { id: "kick", 
-    name: "Kick", 
-    path: "/kick_uv.png", 
+    name: "Toxic", 
+    path: "/toxic_uv.png", 
     knobColor: "#FD0A0A" },
   {
     id: "oldschool",
@@ -68,7 +68,7 @@ const ColorChanger = ({ slice }) => {
     <section
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="relative flex h-[90vh] min-h-[1000px] flex-col overflow-hidden bg-linear-to-br from-[#0f172a] to-[#062f4a] text-white "
+      className="relative flex h-[90vh] min-h-[1000px] flex-col overflow-hidden bg-linear-to-br from-[#93545D] to-[#8C3A7D] text-white "
     >
      {/* SVG BACKGROUND */}
     <svg className="pointer-events-none absolute top-0 left-0 h-auto w-full mix-blend-overlay"
@@ -115,7 +115,7 @@ const ColorChanger = ({ slice }) => {
               onClick={() => hadleTextureSelect(texture)}
               disabled={isAnimating}
               className={clsx("flex aspect-square flex-col items-center justify-center rounded-lg border-2 p-4 hover:scale-105 motion-safe transition-all motion-safe:duration-300",
-                selectedTextureId == texture.id ? "border-[#81bfed] bg-[#81bfed]/20" : "cursor-pointer border-gray",
+                selectedTextureId == texture.id ? "border-[#8C3A7D] bg-[#93545D]/20" : "cursor-pointer border-gray",
                 isAnimating && "cursor-not-allowed opacity-50"
               )}>
                 <div className="mb-3 overflow-hidden rounded border-2 border-black bg-gray-300 hover:border-gray-500">

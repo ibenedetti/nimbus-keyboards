@@ -45,7 +45,7 @@ export function Navbar() {
           ref={button}
           onClick={handleCheckout}
           className={clsx(
-            "group relative flex h-12 transform-gpu cursor-pointer items-center justify-center overflow-hidden rounded bg-gradient-to-r from-[#01A7E1] to-[#0196C9] px-6 py-2.5 font-semibold text-white will-change-transform hover:shadow-lg hover:shadow-[#01A7E1]/25 focus:ring-2 focus:ring-[#01A7E1] focus:ring-offset-2 focus:outline-none disabled:grayscale motion-safe:transition-all motion-safe:duration-300 md:text-base",
+            "group relative flex h-12 transform-gpu cursor-pointer items-center justify-center overflow-hidden rounded bg-gradient-to-r from-[#8C3A7D] to-[#93545D] px-6 py-2.5 font-semibold text-white will-change-transform hover:shadow-lg hover:shadow-[#000]/25 focus:ring-2 focus:ring-[#01A7E1] focus:ring-offset-2 focus:outline-none disabled:grayscale motion-safe:transition-all motion-safe:duration-300 md:text-base",
             "before:absolute before:inset-0 before:translate-x-[-100%] before:bg-gradient-to-r before:from-white/0 before:via-white/20 before:to-white/0 before:ease-out hover:before:translate-x-[100%] motion-safe:before:transition-transform motion-safe:before:duration-700",
           )}
         >
@@ -61,7 +61,7 @@ export function Navbar() {
           </DialogTrigger>
           <DialogPortal>
             <DialogOverlay className="motion-safe:data-[state=open]:animate-in motion-safe:data-[state=closed]:animate-out motion-safe:data-[state=closed]:fade-out-0 motion-safe:data-[state=open]:fade-in-0 fixed inset-0 z-50 bg-black/50" />
-            <DialogContent className="motion-safe:data-[state=open]:animate-in motion-safe:data-[state=closed]:animate-out motion-safe:data-[state=closed]:slide-out-to-right motion-safe:data-[state=open]:slide-in-from-right fixed inset-y-0 right-0 z-50 h-full w-3/4 bg-white p-4 shadow-lg ease-in-out motion-safe:transition motion-safe:data-[state=closed]:duration-300 motion-safe:data-[state=open]:duration-500 sm:max-w-sm">
+            <DialogContent className="motion-safe:data-[state=open]:animate-in motion-safe:data-[state=closed]:animate-out motion-safe:data-[state=closed]:slide-out-to-right motion-safe:data-[state=open]:slide-in-from-right fixed inset-y-0 right-0 z-50 h-full w-3/4 bg-black p-4 shadow-lg ease-in-out motion-safe:transition motion-safe:data-[state=closed]:duration-300 motion-safe:data-[state=open]:duration-500 sm:max-w-sm">
               <DialogTitle className="sr-only" />
               <DialogDescription className="sr-only" />
               <DialogClose className="ml-auto flex size-10 shrink-0 cursor-pointer items-center justify-center rounded-full text-gray-400 hover:text-black motion-safe:transition">
@@ -112,15 +112,15 @@ function NavbarLink({ href, title, description }) {
       <Link
         href={href}
         onClick={() => setOpen(false)}
-        className="group flex items-center rounded-xl p-4 hover:bg-[#01A7E1]/10 motion-safe:transition"
+        className="group flex items-center rounded-xl p-4 hover:bg-[#002555]/50 motion-safe:transition"
       >
         <div className="flex grow flex-col gap-1">
-          <span className="text-xl font-semibold text-gray-900 group-hover:text-[#01A7E1] motion-safe:transition">
+          <span className="text-xl font-semibold text-white group-hover:text-[#8C3A7D] motion-safe:transition">
             {title}
           </span>
-          <span className="text-sm text-gray-500">{description}</span>
+          <span className="text-sm text-white">{description}</span>
         </div>
-        <div className="flex size-10 shrink-0 items-center justify-center rounded-full bg-gray-100 text-gray-400 group-hover:bg-[#01A7E1] group-hover:text-white motion-safe:transition">
+        <div className="flex size-10 shrink-0 items-center justify-center rounded-full bg-gray-[#1F3F69] text-gray-400 group-hover:bg-[#8C3A7D] group-hover:text-white motion-safe:transition">
           <LuChevronRight className="size-5 translate-x-px" />
         </div>
       </Link>

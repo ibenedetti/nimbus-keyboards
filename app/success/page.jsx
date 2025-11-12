@@ -29,7 +29,7 @@ export default async function SuccessPage({ searchParams }) {
   // Handle missing session ID
   if (!sessionId) {
     return (
-      <div className="relative mt-20 min-h-screen bg-gradient-to-br from-gray-50 to-white">
+      <div className="relative mt-20 min-h-screen bg-black text-white">
         <div className="mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
           <div className="text-center">
             <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-red-100">
@@ -70,18 +70,18 @@ export default async function SuccessPage({ searchParams }) {
     };
 
     return (
-      <div className="relative mt-20 min-h-screen bg-gradient-to-br from-gray-50 to-white">
+      <div className="relative mt-20 min-h-screen bg-black text-white">
         <FadeIn
           targetChildren
           className="mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8"
         >
           {/* Success Icon and Header */}
           <div className="text-center">
-            <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-[#01A7E1] to-[#0196C9]">
+            <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-r from-[#8C3A7D] to-[#93545D]">
               <LuCheck className="h-10 w-10 text-white" />
             </div>
 
-            <h1 className="font-bold-slanted mt-8 text-4xl text-gray-900 sm:text-5xl lg:text-6xl">
+            <h1 className="font-bold-slanted mt-8 text-4xl text-[#8C3A7D] sm:text-5xl lg:text-6xl">
               <span className="block tracking-tight uppercase">Payment</span>
               <span className="block bg-gradient-to-r from-[#01A7E1] to-[#0196C9] bg-clip-text tracking-tight text-transparent uppercase">
                 Successful
@@ -192,7 +192,7 @@ export default async function SuccessPage({ searchParams }) {
           <div className="mt-12 flex flex-col justify-center gap-4 sm:flex-row">
             <Link
               href="/"
-              className="group relative flex transform-gpu cursor-pointer items-center justify-center overflow-hidden rounded-xl bg-gradient-to-r from-[#01A7E1] to-[#0196C9] px-8 py-3 font-semibold text-white transition-all duration-300 will-change-transform hover:shadow-lg hover:shadow-[#01A7E1]/25 focus:ring-2 focus:ring-[#01A7E1] focus:ring-offset-2 focus:outline-none"
+              className="group relative flex transform-gpu cursor-pointer items-center justify-center overflow-hidden rounded-xl bg-gradient-to-r from-[#8C3A7D] to-[#93545D] px-8 py-3 font-semibold text-white transition-all duration-300 will-change-transform hover:shadow-lg hover:shadow-[#01A7E1]/25 focus:ring-2 focus:ring-[#01A7E1] focus:ring-offset-2 focus:outline-none"
             >
               <span className="font-bold-slanted relative z-10 flex items-center gap-2 text-lg uppercase">
                 Continue Shopping

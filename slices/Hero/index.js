@@ -16,12 +16,20 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 import { Loader } from "@/components/Loader";
 import { useProgress } from "@react-three/drei";
 import { useEffect, useState } from "react";
+import { checkout } from "@/checkout";
 
 gsap.registerPlugin(useGSAP, SplitText, ScrollTrigger);
+async function handleCheckout() {
+      if (button.current) button.current.disabled = true;
+      await checkout();
+      if (button.current) button.current.disabled = false;
+    }
 
 function LoaderWrapper () {
   const {active} = useProgress();
   const [showLoader, setShowLoader] = useState(active);
+
+  
 
   const MINIMUM_DISPLAY_TIME = 1500; 
 
@@ -72,10 +80,10 @@ const Hero = ({ slice }) => {
       })
 
       gsap.fromTo(".hero-scene", {
-        background: "linear-gradient(to bottom, #000000, #0f172a, #062f4a, #7fa0b9)",
+        background: "linear-gradient(to bottom,#8a030a, #77298f,#0f172a, #000000)",
        
       }, {
-        background:  "linear-gradient(to bottom, #ffffff, #ffffff, #ffffff, #ffffff)",
+        background:  "linear-gradient(to bottom, #000000, #000000, #000000, #000000)",
          scrollTrigger: {
           trigger: ".hero",
           start: "top top",
@@ -126,7 +134,10 @@ const Hero = ({ slice }) => {
                 <h2 className="font-bold-slanted mb-1 text-4xl uppercase lg:mb-2 lg:text-6xl">{children}</h2>
               )
             }} />
-            <button className="group font-bold-slanted flex w-fit cursor-pointer items-center gap-1 rounded bg-[#01a7e1] px-3 py-1 text-2xl uppercase transition disabled:grayscale">          
+            <button 
+            
+            onClick={handleCheckout}
+            className="group font-bold-slanted flex w-fit cursor-pointer items-center gap-1 rounded bg-[#8C3A7D] px-3 py-1 text-2xl uppercase transition disabled:grayscale">          
               {slice.primary.buy_button_text}
               <span className="group-hover:translate-x-1 transition">{">"}</span>
             </button>

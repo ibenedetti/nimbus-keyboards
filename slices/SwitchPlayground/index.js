@@ -23,14 +23,14 @@ const SwitchPlayground = ({ slice }) => {
     <Bounded
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
-      className="relative"
+      className="relative bg-black"
       innerClassName="flex flex-col justify-center"
     >
       <FadeIn>
-        <h2 id="switch-playground" className="font-bold-slanted text-6xl md:text-8xl uppercase scroll-pt-6">
+        <h2 id="switch-playground" className="font-bold-slanted text-white text-6xl md:text-8xl uppercase scroll-pt-6">
           <PrismicText field={slice.primary.heading} />
         </h2>
-        <div className="mb-6 max-w-4xl text-pretty">        
+        <div className="mb-6 max-w-4xl text-pretty text-white">        
           <PrismicRichText field={slice.primary.description} />
         </div>
         <FadeIn targetChildren className="grid grid-cols-1 gap-4 overflow-hidden sm:grid-cols-2">

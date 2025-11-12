@@ -76,17 +76,18 @@ const PurchaseButton = ({ slice }) => {
     <Bounded
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
+      className="bg-black"
     >
       <FadeIn className="relative mx-auto max-w-7xl px-4 text-center" targetChildren>
-        <p className="mb-6 text-xl font-medium text-gray-700 md:text-2xl">{slice.primary.eyebrow}</p>
-        <h2 id="buy-button" className="font-bold-slanted mb-8 scroll-pt-6 text-5xl text-gray-900 uppercase md:text-7xl lg:text-8xl">
+        <p className="mb-6 text-xl font-medium  text-[#93545D] md:text-2xl">{slice.primary.eyebrow}</p>
+        <h2 id="buy-button" className="font-bold-slanted mb-8 scroll-pt-6 text-5xl text-white uppercase md:text-7xl lg:text-8xl">
           <PrismicText field={slice.primary.heading} />
         </h2>
         <button
           ref={buttonRef}
           onClick={handlePurchaseClick}
           disabled={isPressed}
-          className={clsx("group relative w-full overflow-hidden rounded-full border-8 border-gray-900 bg-linear-to-r/oklch from-sky-300 to-sky-600 px-6 py-6 ease-out focus:ring-[24px] focus:ring-sky-500/50 focus:outline-none motion-safe:transition-all motion-safe:duratio-300 md:border-[12px] md:px-20 md:py-16",
+          className={clsx("group relative w-full overflow-hidden rounded-full border-8 border-[#93545D] bg-linear-to-r/oklch from-[#002555] to-[#1F3F69] px-6 py-6 ease-out focus:ring-[24px] focus:ring-[#8C3A7D] focus:outline-none motion-safe:transition-all motion-safe:duratio-300 md:border-[12px] md:px-20 md:py-16",
             "hover:scale-105 hover:shadow-2xl hover:shadow-sky-500/40",
             "active:scale-95",
             isPressed ? "scale-95 cursor-not-allowed opacity-80" : "cursor-pointer"
@@ -97,11 +98,12 @@ const PurchaseButton = ({ slice }) => {
             <span
               ref={textRef}
               style={{ "--wdth": 85, "--wght": 850 }}
-              className="font-black-slanted text-4xl tracking-wide text-gray-900 uppercase group-hover:-translate-y-1 motion-safe:transition-transform motion-safe:duration-300 md:text-7xl lg:text-9xl">
+              className="font-black-slanted text-4xl tracking-wide text-[#93545D] uppercase group-hover:-translate-y-1 motion-safe:transition-transform motion-safe:duration-300 md:text-7xl lg:text-8xl">
               {isPressed ? (
                 <span
                   className="flex items-center gap-4 md:gap-6">
-                  <LuLoader className="size-12 animate-spin text-gray-900 md:size-16" />
+                  <LuLoader
+                  className="size-12 animate-spin text-[#93545D] md:size-16" />
                   Loading...
                 </span>
               ) :
@@ -109,14 +111,14 @@ const PurchaseButton = ({ slice }) => {
             </span>
             {!isPressed && (
               <div className="hidden group-hover:translate-x-2 group-hover:scale-125 motion-safe:transition-all motion-safe:duration-300 md:block">
-                <LuChevronRight className="size-12 text-gray-900 md:size-16" />
+                <LuChevronRight className="size-12  text-[#93545D] md:size-16" />
               </div>
 
             )}
 
           </div>
         </button>
-        <div className="mt-12 space-y-3 text-base text-gray-600 md:text-lg">
+        <div className="mt-12 space-y-3 text-base  text-[#93545D] md:text-lg">
           <PrismicRichText field={slice.primary.body} />
         </div>
       </FadeIn>

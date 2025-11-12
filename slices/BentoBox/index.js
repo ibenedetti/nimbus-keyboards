@@ -14,9 +14,10 @@ const BentoBox = ({ slice }) => {
     <Bounded
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
+      className="bg-black"
     >
       <FadeIn>
-        <h2 id="features" className="font-bold-slanted mb-8 scroll-pt-6 text-6xl uppercase md:text-8xl">      
+        <h2 id="features" className="font-bold-slanted text-white mb-8 scroll-pt-6 text-6xl uppercase md:text-8xl">      
           <PrismicText field={slice.primary.heading} />
         </h2>
       </FadeIn>
