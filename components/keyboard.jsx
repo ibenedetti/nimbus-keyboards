@@ -154,7 +154,7 @@ export const Keyboard = forwardRef(({ keycapMaterial, knobColor, ...props }, ref
     return loadedTexture;
   }, [loadedTexture]);
 
-  const knurlImg = useTexture("/knurl.jpg");
+  const knurlImg = useTexture("/Knurl.jpg");
 
   const knurlTexture = useMemo(() => {
     knurlImg.flipY = false;
